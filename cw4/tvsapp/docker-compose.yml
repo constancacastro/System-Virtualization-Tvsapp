@@ -1,0 +1,32 @@
+services:
+  entry:
+    image: nginx:alpine
+    ports:
+      - "2024:80"
+    volumes:
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - entry-network
+  webapp:
+    build:
+      dockerfile: ./Dockerfile
+    environment:
+      ELASTIC_URL: http://storage:9200
+    networks:
+      - entry-network
+      - storage-network
+  storage:
+    image: elasticsearch:8.16.1
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: false
+    volumes:
+      - /usr/share/elasticsearch/data
+    networks:
+      - storage-network
+
+networks:
+  entry-network:
+    driver: bridge
+  storage-network:
+    driver: bridge

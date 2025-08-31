@@ -1,0 +1,13 @@
+[Unit]
+Description=TVS Control Application
+
+[Service]
+WorkingDirectory=/opt/isel/tvs/tvsctld/bin
+ExecStart=/opt/isel/tvs/tvsctld/bin/tvsctld
+Restart=no
+User=root
+StandartOutput=journal
+
+[Install]
+WantedBy=multi-user.target
+

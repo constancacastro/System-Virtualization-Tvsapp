@@ -1,0 +1,12 @@
+[Unit]
+Description=TVS web app activation socket
+
+[Socket]
+ListenStream=/run/isel/tvs/request/tvsctld.sock
+SocketMode=0660
+#Accept=false
+SocketUser=root
+SocketGroup=tvsgrp
+
+[Install]
+WantedBy=sockets.target
