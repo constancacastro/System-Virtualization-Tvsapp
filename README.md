@@ -9,7 +9,7 @@ This repository contains coursework assignments for the **System Virtualization 
 - `cw4/` – **Coursework 4**  
   Containerized deployment using **Docker**, **Docker Compose**, and **nginx** load balancing across replicas.
 
-## 🚀 Goals
+## Goals
 Both assignments share the same application and general objectives:
 - Run a scalable web application (`tvsapp`) with **Elasticsearch** as the backend.
 - Manage multiple replicas of the application behind an **nginx load balancer**.
@@ -19,7 +19,7 @@ The main difference lies in the **virtualization approach**:
 - **CW3**: Traditional service-based management with scripts and `systemd`.  
 - **CW4**: Modern container-based orchestration with Docker and Compose.
 
-## 🛠 Technologies
+## Technologies
 - **Node.js**  
 - **Elasticsearch**  
 - **nginx**  
